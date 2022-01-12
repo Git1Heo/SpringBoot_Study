@@ -1,0 +1,22 @@
+package com.icia.member.dto;
+
+import com.icia.member.entity.MemberEntity;
+import lombok.Data;
+
+@Data
+public class MemberDetailDTO {
+    private Long memberId;
+    private String memberEmail;
+    private String memberPassword;
+    private String memberName;
+
+    public static MemberDetailDTO toMemberDetailDTO(MemberEntity member){
+        MemberDetailDTO memberDetailDTO =new MemberDetailDTO();
+        memberDetailDTO.setMemberId(member.getId());
+        memberDetailDTO.setMemberName(member.getMemberName());
+        memberDetailDTO.setMemberEmail(member.getMemberEmail());
+        memberDetailDTO.setMemberPassword(member.getMemberPassword());
+        return memberDetailDTO;
+
+    }
+}
